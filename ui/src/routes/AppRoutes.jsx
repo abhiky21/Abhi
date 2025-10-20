@@ -13,6 +13,8 @@ export default function AppRoutes() {
           <Route path="login" element={<Login />} />
         </Route>
 
+        {/* Private Routes */}
+
         {/* Catch All */}
         <Route path="*" element={<NotFound />} />
       </Routes>

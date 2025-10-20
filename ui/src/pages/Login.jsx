@@ -41,6 +41,7 @@ export default function LoginCard() {
         name={`${r}-login`}
         onFinish={handleFinish}
         className="flex flex-col gap-4"
+        initialValues={{ username: "admin@admin.com", password: "123456" }}
       >
         <Form.Item
           name="username"
