@@ -8,7 +8,7 @@ import addInitialData from "./initial.data.js";
 const dbConfig = {
   HOST: process.env.DB_HOST,
   USER: process.env.DB_USER,
-  PASSWORD: process.env.DB_PASSWORD,
+  PASSWORD: process.env.DB_PASS,
   DB_NAME: process.env.DB_NAME,
   dialect: "mysql",
   pool: {
@@ -27,7 +27,7 @@ const sequelize = new Sequelize(
     host: dbConfig.HOST,
     dialect: dbConfig.dialect,
     pool: dbConfig.pool,
-    logging: true,
+    logging: console.log,
   }
 );
 
@@ -44,7 +44,7 @@ async function loadModels() {
 export async function startSequelize() {
   console.log("Running DB schema setup...");
   async function ensureDatabase() {
-    const con = mysql.createConnection({
+    const con = await mysql.createConnection({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASS,
