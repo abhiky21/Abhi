@@ -47,6 +47,26 @@ export function zeroPad(num, places) {
   return String(num).padStart(places, "0");
 }
 
+export function copyObj(obj) {
+  return structuredClone(obj);
+}
+
+export function deepClone(obj) {
+  if(obj === null || typeof obj !== "object") {
+    return obj;
+  }
+
+  if(Array.isArray(obj)) {
+    return obj.map(deepClone);
+  }
+
+  const copy = {};
+  for(const key in obj) {
+    copy[key] = deepClone(obj[key]);
+  }
+  return copy;
+}
+
 export function trim(obj) {
   if (typeof obj === "string") {
     return obj.trim();
