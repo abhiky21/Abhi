@@ -3,5 +3,5 @@ import ComingSoon from "../common/ComingSoon"
 
 export default function Header() {
   const navigate = useNavigate();
-  return 
+  return <header className="bg-[#1E1E1E]"></header>
 }
