@@ -81,7 +81,7 @@ export async function saveDb(
   }
 }
 
-export async function deDb(tbl, cond, trx = null) {
+export async function delDb(tbl, cond, trx = null) {
   const knexOb = trx || db;
   return await knexOb(tbl).where(cond).del();
 }
