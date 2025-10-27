@@ -1,3 +1,5 @@
+import ComingSoon from "../components/common/ComingSoon";
+
 export default function Dashboard() {
-  return <div>Hello</div>;
+  return <ComingSoon />
 }

@@ -1,10 +1,8 @@
 import { Button, Result } from "antd";
-import { PageContent } from ".";
 import { SmileOutlined } from "@ant-design/icons";
 
 export default function ComingSoon() {
   return (
-    <PageContent>
       <div>
         <Result
           icon={<SmileOutlined />}
@@ -12,6 +10,5 @@ export default function ComingSoon() {
           extra={<Button type="primary">Ok</Button>}
         />
       </div>
-    </PageContent>
   );
 }
