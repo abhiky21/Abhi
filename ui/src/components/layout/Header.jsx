@@ -3,25 +3,7 @@ import ComingSoon from "../common/ComingSoon";
 import { Avatar, Dropdown, Space } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import profilelogo from "../../store/profile.jpg";
-
-const items = [
-  {
-    label: (
-      <a href="#" className="text-[12px]" target="" rel="noopener noreferrer">
-        Profile
-      </a>
-    ),
-    key: "0",
-  },
-  {
-    label: (
-      <a href="#" className="text-[10px]" target="" rel="noopener noreferrer">
-        Logout
-      </a>
-    ),
-    key: "1",
-  },
-];
+import { items } from "../../store/assets";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -29,7 +11,7 @@ export default function Header() {
     <header className="bg-[#0069AB] w-full h-full">
       <div className="flex justify-between p-2">
         <div className="flex justify-center items-center pl-4">
-          <div>
+          <div className="flex items-center justify-center hover:border-white border-transparent rounded-full border-1">
             <Avatar size={64}>Logo</Avatar>
           </div>
           <div className="px-10">
@@ -40,14 +22,14 @@ export default function Header() {
         </div>
         <div className="flex justify-center items-center gap-6 mx-2">
           <div>
-            <p className="text-white">Abhishek Yadav</p>
+            <p className="text-white hover:underline cursor-pointer">Abhishek Yadav</p>
             <p className="text-white text-sm sm:text-md">Student</p>
           </div>
           <div>
             <img className="h-14 rounded-4xl" src={profilelogo} alt="" />
           </div>
           <div >
-            <Dropdown menu={{ items }} trigger={["click"]}>
+            <Dropdown menu={{ items: items }} trigger={["click"]}>
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
                   <i className="fa-solid fa-gears fa-xl sm:fa-2xl"
