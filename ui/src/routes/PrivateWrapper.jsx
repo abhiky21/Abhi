@@ -1,7 +1,7 @@
 import { Spin } from "antd";
 import { useEffect, useState } from "react";
-import MainLayout from "../layout/MainLayout"
 import { Navigate } from "react-router-dom";
+import ParentLayout from "../layout/ParentLayout";
 
 export default function PrivateWrapper() {
   const [isReady, setReady] = useState(false);
@@ -17,13 +17,13 @@ export default function PrivateWrapper() {
     }
   }, [isAuthenticated]);
 
-  if(!isReady) {
-    return(
+  if (!isReady) {
+    return (
       <div className="flex items-center justify-center h-[200px]">
         <Spin />
       </div>
-    )
+    );
   }
 
-  return isAuthenticated ? <MainLayout /> : <Navigate to='/' replace />
+  return isAuthenticated ? <ParentLayout /> : <Navigate to="/" replace />;
 }
