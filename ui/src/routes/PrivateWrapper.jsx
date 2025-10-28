@@ -11,7 +11,7 @@ export default function PrivateWrapper() {
     if (isAuthenticated) {
       setTimeout(() => {
         setReady(true);
-      }, 3000);
+      }, 1000);
     } else {
       setReady(true);
     }
