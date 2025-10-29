@@ -1,14 +1,14 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-@import "@fontsource/open-sans/400.css";
-@import "@fontsource/open-sans/500.css";
-@import "@fontsource/open-sans/600.css";
-@import "@fontsource/open-sans/700.css";
+@import '@fontsource/open-sans/400.css';
+@import '@fontsource/open-sans/500.css';
+@import '@fontsource/open-sans/600.css';
+@import '@fontsource/open-sans/700.css';
 
 :root {
   --page-bg: #ffffff;
-  --font-base: "Open Sans", "Segoe UI", Arial;
-  --font-heading: "Open Sans", "Segoe UI", Arial;
+  --font-base: 'Open Sans', 'Segoe UI', Arial;
+  --font-heading: 'Open Sans', 'Segoe UI', Arial;
   --font-base-size: 14px;
   --text-color: #333;
   --bdr-color: #ebe6e7;
@@ -64,4 +64,10 @@
 }
 .scrollb.round-thumb::-webkit-scrollbar-thumb {
   border-radius: 9999px;
+}
+
+.myBtnFont * {
+  font-family: 'Tahoma', 'Arial', 'Trebuchet MS', 'Verdana', sans-serif !important;
+  color: #095899;
+  cursor: pointer;
 }

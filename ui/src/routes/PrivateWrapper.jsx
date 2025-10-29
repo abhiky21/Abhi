@@ -1,7 +1,7 @@
-import { Spin } from "antd";
-import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
-import ParentLayout from "../layout/ParentLayout";
+import { Spin } from 'antd';
+import { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import ParentLayout from '../layout/ParentLayout';
 
 export default function PrivateWrapper() {
   const [isReady, setReady] = useState(false);
@@ -9,9 +9,7 @@ export default function PrivateWrapper() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      setTimeout(() => {
-        setReady(true);
-      }, 1000);
+      setReady(true);
     } else {
       setReady(true);
     }
