@@ -6,6 +6,7 @@ async function addAdminUser() {
   const exists = await db("users").where({ type: "admin" }).first();
   if (exists) return;
   const data = {
+    school_id: 1,
     name: "Admin",
     type: "admin",
     email: "admin@admin.com",

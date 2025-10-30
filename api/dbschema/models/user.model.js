@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../sequelize.js";
+import School from "./school.model.js";
 
 const User = sequelize.define(
   "User",
@@ -9,17 +10,27 @@ const User = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
+    school_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "schools",
+        key: "id",
+      },
+      onDelete: "CASCADE",
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     type: {
-      type: DataTypes.ENUM("admin", "teacher", "student"),
+      type: DataTypes.ENUM("admin", "teacher", "student", "parent"),
       allowNull: false,
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     password: {
       type: DataTypes.STRING,
@@ -31,26 +42,26 @@ const User = sequelize.define(
     },
     photo: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     created: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
     },
     updated: {
       type: DataTypes.DATE,
+      defaultValue: DataTypes.NOW,
     },
   },
   {
     tableName: "users",
     timestamps: false,
-    indexes: [
-      {
-        unique: true,
-        fields: ["email"],
-        name: "email_unique",
-      },
-    ],
   }
 );
+
+// Associations
+import School from "./school.model.js";
+User.belongsTo(School, { foreignKey: "school_id", as: "school" });
+School.hasMany(User, { foreignKey: "school_id", as: "users" });
 
 export default User;
