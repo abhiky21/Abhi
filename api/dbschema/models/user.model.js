@@ -24,7 +24,7 @@ const User = sequelize.define(
       allowNull: false,
     },
     type: {
-      type: DataTypes.ENUM("admin", "teacher", "student", "parent"),
+      type: DataTypes.ENUM("admin", "teacher", "parent", "student"),
       allowNull: false,
     },
     email: {
@@ -60,7 +60,6 @@ const User = sequelize.define(
 );
 
 // Associations
-import School from "./school.model.js";
 User.belongsTo(School, { foreignKey: "school_id", as: "school" });
 School.hasMany(User, { foreignKey: "school_id", as: "users" });
 

@@ -2,8 +2,8 @@ import { DataTypes } from "sequelize";
 import sequelize from "../sequelize.js";
 import User from "./user.model.js";
 
-const Parent = sequelize.define(
-  "Parent",
+const Student = sequelize.define(
+  "Student",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -18,19 +18,19 @@ const Parent = sequelize.define(
         key: "id",
       },
     },
-    class_of_child: {
+    class: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
   {
-    tableName: "parents",
+    tableName: "students",
     timestamps: false,
   }
 );
 
 // Associations
-Parent.belongsTo(User, { foreignKey: "user_id", as: "user" });
-User.hasOne(Parent, { foreignKey: "user_id", as: "parent" });
+Student.belongsTo(User, { foreignKey: "user_id", as: "user" });
+User.hasOne(Student, { foreignKey: "user_id", as: "student" });
 
-export default Parent;
+export default Student;
