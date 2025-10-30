@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { Avatar, Dropdown, Space } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import profilelogo from "../../../Assets/profile.jpg";
-import logo from "../../../Assets/eduflow.png";
+import { DownOutlined, SmileFilled } from "@ant-design/icons";
+import logo from "../../assets/eduflow.png";
 import { headerMenu } from "../../assets/menuItems.assets";
 
 export default function Header() {
@@ -27,7 +26,8 @@ export default function Header() {
             <p className="text-white text-sm sm:text-md">Student</p>
           </div>
           <div>
-            <img className="h-14 rounded-4xl" src={profilelogo} alt="" />
+            {/* <img className="h-14 rounded-4xl" src={} alt="" /> */}
+            <Avatar size="large" icon={<SmileFilled />} />
           </div>
           <div>
             <Dropdown menu={headerMenu} trigger={["click"]}>
