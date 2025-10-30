@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const navBarMenuItems = {
   personal: {
@@ -30,4 +30,25 @@ export const navBarMenuItems = {
       { key: 5, label: <Link to="laboratory">Laboratory</Link> },
     ],
   },
+};
+
+export const headerMenu = {
+  items: [
+    {
+      label: (
+        <Link to="/profile" className="text-[10px]" rel="noopener noreferrer">
+          Profile <i class="fa-solid fa-user"></i>
+        </Link>
+      ),
+      key: "0",
+    },
+    {
+      label: (
+        <Link to="/logout" className="text-[10px]" rel="noopener noreferrer">
+          Logout <i className="fa-solid fa-right-from-bracket"></i>
+        </Link>
+      ),
+      key: "1",
+    },
+  ],
 };
