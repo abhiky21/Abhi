@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "dev": "node dbschema/run.js",
+    "dev": "node dbschema/run.js && nodemon --watch src src/index.js",
     "prod": "node src/index.js"
   },
   "keywords": [],

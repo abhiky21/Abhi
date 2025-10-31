@@ -19,17 +19,12 @@ const dbConfig = {
   },
 };
 
-const sequelize = new Sequelize(
-  dbConfig.DB_NAME,
-  dbConfig.USER,
-  dbConfig.PASSWORD,
-  {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    pool: dbConfig.pool,
-    logging: console.log,
-  }
-);
+const sequelize = new Sequelize(dbConfig.DB_NAME, dbConfig.USER, dbConfig.PASSWORD, {
+  host: dbConfig.HOST,
+  dialect: dbConfig.dialect,
+  pool: dbConfig.pool,
+  logging: false,
+});
 
 async function loadModels() {
   const modelsDir = path.resolve(process.cwd(), "dbschema/models");
