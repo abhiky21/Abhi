@@ -63,4 +63,19 @@ export async function handleSave(req, res) {
   }
 }
 
-export async function handleDel(req, res) {}
+export async function del(req, res) {
+  try {
+    const { type: user_type } = req.user;
+    if (user_type !== "principal") {
+      throw new Error("You are not authorized");
+    }
+    const id = req.body.id;
+    if (!id) {
+      throw new Error("Invalid Request");
+    }
+    await userServ.del(id, req);
+    return res.status(400).json({ message: "Deleted successfully" });
+  } catch (e) {
+    return res.status(400).json({ message: e.message || "Error" });
+  }
+}
