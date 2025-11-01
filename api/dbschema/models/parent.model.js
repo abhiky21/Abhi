@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../sequelize.js";
-import User from "./user.model.js";
+// import User from "./user.model.js";
 
 const Parent = sequelize.define(
   "Parent",
@@ -14,7 +14,7 @@ const Parent = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: User,
+        model: "users",
         key: "id",
       },
     },
@@ -29,8 +29,8 @@ const Parent = sequelize.define(
   }
 );
 
-// Associations
-Parent.belongsTo(User, { foreignKey: "user_id", as: "user" });
+// // Associations
+// Parent.belongsTo(User, { foreignKey: "user_id", as: "user" });
 User.hasOne(Parent, { foreignKey: "user_id", as: "parent" });
 
 export default Parent;

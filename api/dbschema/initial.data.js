@@ -23,13 +23,13 @@ async function addDummySchool() {
 }
 
 async function addAdminUser(school_id) {
-  const exists = await db("users").where({ type: "admin" }).first();
+  const exists = await db("users").where({ type: "principal" }).first();
   if (exists) return;
   const data = {
     school_id: school_id,
-    name: "Admin",
-    type: "admin",
-    email: "admin@admin.com",
+    name: "Principal",
+    type: "principal",
+    email: "principal@principal.com",
     password: encryptPassword("123456"),
   };
   await db("users").insert(data);
