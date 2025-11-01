@@ -17,8 +17,8 @@ export const navBarMenuItems = {
   function: {
     items: [
       { key: 1, label: <Link to="syllabus">Syllabus</Link> },
-      { key: 1, label: <Link to="trip">School trips</Link> },
-      { key: 1, label: <Link to="feedback">Feedback</Link> },
+      { key: 2, label: <Link to="trip">School trips</Link> },
+      { key: 3, label: <Link to="feedback">Feedback</Link> },
     ],
   },
   facilities: {

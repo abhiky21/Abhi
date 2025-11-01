@@ -1,145 +1,68 @@
-import { useState } from "react";
-import { Form, Input, Button, Checkbox, Tabs, Typography } from "antd";
-import AnimatedBackground from "../components/login/AnimatedBackground";
+import React from "react";
+import { UserOutlined, EyeInvisibleOutlined } from "@ant-design/icons";
+import { Input, Button } from "antd";
+import logo from "../../src/assets/eduflow.png";
+import eduflowlogo from "../../src/assets/LogoEduFlow.png";
+import passwordlock from "../../src/assets/passwordinput.png";
+import loginImage from "../../src/assets/loginImage.jpg";
 
-const { Title, Text } = Typography;
+import TypingAnimation from "./TypingAnimation";
 
-export default function LoginCard() {
-  const [role, setRole] = useState("parent");
-  const [loading, setLoading] = useState(false);
-
-  const roles = {
-    parent: {
-      info: "Track attendance, marks, and fee details for your child.",
-      placeholder: "Username / Roll Number",
-    },
-    teacher: {
-      info: "Manage class attendance, marks, and student performance.",
-      placeholder: "Username / Staff ID",
-    },
-    admin: {
-      info: "Full access to school operations, reports, and notifications.",
-      placeholder: "Username / Admin ID",
-    },
-  };
-
-  const handleFinish = (values) => {
-    setLoading(true);
-    console.log("Form Values:", values);
-    setTimeout(() => {
-      setLoading(false);
-      alert("Login being built!");
-    }, 1500);
-  };
-
-  const tabItems = Object.keys(roles).map((r) => ({
-    key: r,
-    label: r.charAt(0).toUpperCase() + r.slice(1),
-    children: (
-      <Form
-        layout="vertical"
-        name={`${r}-login`}
-        onFinish={handleFinish}
-        className="flex flex-col gap-4"
-        initialValues={{ username: "admin@admin.com", password: "123456" }}
-      >
-        <Form.Item
-          name="username"
-          rules={[{ required: true, message: "Please input your username!" }]}
-        >
+function Login() {
+  return (
+    <div className="flex items-center justify-center py-10 mx-20">
+      <div className="flex flex-col items-center justify-center py-10 mx-20 space-y-12">
+        <div className="bg-sky-400 w-250 flex p-10 rounded-4xl">
+          <img className="rounded-full w-50" src={logo} alt="EduFlow-logo" />
+          <TypingAnimation/>
+        </div>
+        <div className="">
+          <img className="rounded" src={loginImage} alt="EduFlow-logo" />
+        </div>
+      </div>
+      <div className="border border-gray-300 box-border rounded-xl mx-10">
+        <h1 className="bg-[#023047] text-2xl text-white py-6 text-center rounded-t-xl font-bold">
+          LOGIN
+        </h1>
+        <img
+          className="rounded-full w-25 bg-white ml-52 p-4 relative bottom-5"
+          src={eduflowlogo}
+          alt="EduFlow-logo"
+        />
+        <h1 className="text-center text-3xl font-semibold ">
+          Login to EduFlow
+        </h1>
+        <div className="w-lg px-10 space-y-4 py-16">
           <Input
             size="large"
-            placeholder={roles[r].placeholder}
-            className="!bg-white/10 !text-white placeholder-white/70"
+            placeholder="Enter your username"
+            prefix={<UserOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
           />
-        </Form.Item>
 
-        <Form.Item
-          name="password"
-          rules={[{ required: true, message: "Please input your password!" }]}
-        >
           <Input.Password
             size="large"
-            placeholder="Password"
-            className="!bg-white/10 !text-white placeholder-white/70"
+            placeholder="input password"
+            prefix={
+              <img
+                src={passwordlock}
+                alt="lock"
+                style={{ color: "rgba(0,0,0,.25)", width: "20px" }}
+              />
+            }
           />
-        </Form.Item>
 
-        {/* <Form.Item name="remember" valuePropName="checked">
-          <Checkbox className="text-blue-50">Remember Me</Checkbox>
-        </Form.Item> */}
-
-        <Form.Item>
-          <Button
-            type="primary"
-            htmlType="submit"
-            size="large"
-            loading={loading}
-            className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-900 hover:to-blue-600 text-white font-semibold w-full"
-          >
+          <Button type="primary" style={{ marginTop: "20px" }} block>
             Login
           </Button>
-        </Form.Item>
-
-        <Text
-          className="text-red-400 underline cursor-pointer"
-          onClick={() => alert("Forgot Password Clicked")}
-        >
-          Forgot Password?
-        </Text>
-      </Form>
-    ),
-  }));
-
-  return (
-    <div
-      className="relative flex h-screen w-screen items-center justify-center overflow-hidden 
-      bg-[linear-gradient(-45deg,#a7f3d0,#6ee7b7,#3b82f6)] 
-      bg-[length:400%_400%]"
-      style={{ animation: "gradientBG 20s ease infinite" }}
-    >
-      <style>
-        {`@keyframes gradientBG {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }`}
-      </style>
-
-      <AnimatedBackground />
-
-      <div className="relative z-10 w-[480px] max-w-[90%] rounded-2xl bg-white/15 p-10 shadow-2xl backdrop-blur-md border border-white/30 transition-transform hover:shadow-3xl">
-        <Title level={3} className="text-blue-900 mb-2 drop-shadow">
-          National Convent School
-        </Title>
-        <Text className="text-blue-50 mb-6 block">
-          Track, Learn, and Grow Every Day!
-        </Text>
-
-        <Tabs
-          activeKey={role}
-          onChange={(key) => setRole(key)}
-          items={tabItems}
-        />
-
-        <div className="mt-4 text-center text-sm text-blue-900 opacity-90">
-          {roles[role].info}
+          <p className="text-end text-sm font-light underline text-blue-600">
+            <a href="#">Forgot username/password</a>
+          </p>
         </div>
-
-        <Text
-          className="mt-3 text-center text-sm text-blue-50 underline cursor-pointer block"
-          onClick={() => alert("Open QR login scanner!")}
-        >
-          Login via QR Code
-        </Text>
-
-        <Text
-          className="mt-3 text-center text-sm text-red-400 underline cursor-pointer block"
-          onClick={() => alert("Redirect to other institute login!")}
-        >
-          Not your institute?
-        </Text>
       </div>
+
+      <div></div>
     </div>
   );
 }
+
+export default Login;
