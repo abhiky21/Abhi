@@ -10,6 +10,10 @@ const Student = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
+    roll_number: {
+      type: DataTypes.INTEGER,
+      unique: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

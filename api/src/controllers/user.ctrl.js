@@ -13,7 +13,7 @@ async function handleList(fn, req, res) {
 export const listTeachers = (req, res) => handleList(userServ.listTeachers, req, res);
 export const listStudents = (req, res) => handleList(userServ.listStudents, req, res);
 
-export async function handleSave(req, res) {
+export async function save(req, res) {
   try {
     const { type: user_type } = req.user;
     if (user_type !== "principal") {
