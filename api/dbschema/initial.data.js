@@ -89,7 +89,7 @@ async function addStudentUser(school_id) {
   const [user_id] = await db("users").insert(data);
   const studentData = {
     user_id: user_id,
-    class: 7,
+    class_name: 7,
   };
   await db("students").insert(studentData);
 }
