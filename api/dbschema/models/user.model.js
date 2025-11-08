@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../sequelize.js";
-import School from "./school.model.js";
+// import School from "./school.model.js";
 
 const User = sequelize.define(
   "User",
@@ -24,7 +24,7 @@ const User = sequelize.define(
       allowNull: false,
     },
     type: {
-      type: DataTypes.ENUM("admin", "teacher", "parent", "student"),
+      type: DataTypes.ENUM("principal", "teacher", "parent", "student"),
       allowNull: false,
     },
     email: {
@@ -56,11 +56,18 @@ const User = sequelize.define(
   {
     tableName: "users",
     timestamps: false,
+    indexes: [
+      {
+        unique: true,
+        fields: ["email"],
+        name: "email_unique",
+      },
+    ],
   }
 );
 
-// Associations
-User.belongsTo(School, { foreignKey: "school_id", as: "school" });
-School.hasMany(User, { foreignKey: "school_id", as: "users" });
+// // Associations
+// User.belongsTo(School, { foreignKey: "school_id", as: "school" });
+// School.hasMany(User, { foreignKey: "school_id", as: "users" });
 
 export default User;

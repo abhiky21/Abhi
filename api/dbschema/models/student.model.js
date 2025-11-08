@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../sequelize.js";
-import User from "./user.model.js";
+// import User from "./user.model.js";
 
 const Student = sequelize.define(
   "Student",
@@ -10,15 +10,19 @@ const Student = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
+    roll_number: {
+      type: DataTypes.INTEGER,
+      unique: true,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: User,
+        model: "users",
         key: "id",
       },
     },
-    class: {
+    class_name: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -29,8 +33,8 @@ const Student = sequelize.define(
   }
 );
 
-// Associations
-Student.belongsTo(User, { foreignKey: "user_id", as: "user" });
-User.hasOne(Student, { foreignKey: "user_id", as: "student" });
+// // Associations
+// Student.belongsTo(User, { foreignKey: "user_id", as: "user" });
+// User.hasOne(Student, { foreignKey: "user_id", as: "student" });
 
 export default Student;

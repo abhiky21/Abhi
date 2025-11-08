@@ -3,12 +3,10 @@ import sharp from "sharp";
 import path from "path";
 import multer from "multer";
 import dayjs from "dayjs";
-import { getEndPoint } from "./utils";
+import { getEndPoint } from "./utils.js";
 
 const allowedExtToUpload =
-  "gif|jpg|jpeg|png|pdf|doc|xls|ppt|docx|xlsx|pptx|mp4|webp|mkv|avi|mov|blob".split(
-    "|"
-  );
+  "gif|jpg|jpeg|png|pdf|doc|xls|ppt|docx|xlsx|pptx|mp4|webp|mkv|avi|mov|blob".split("|");
 
 export function getExt(filename) {
   let ext = /[^.]+$/.exec(filename);
