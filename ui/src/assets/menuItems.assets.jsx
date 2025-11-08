@@ -1,36 +1,84 @@
 import { Link } from "react-router-dom";
+import Mhistory from "../assets/marks_history.png";
+import certificate from "../assets/certificate.png";
+import calender from "../assets/calender.png";
+import holidays from "../assets/holidays.png";
+import leave from "../assets/leave.png";
+import syllabus from "../assets/syllabus.png";
+import feedback from "../assets/feedback.png";
+import trip from "../assets/school_trip.png";
+import library from "../assets/library.png";
+import hostal from "../assets/hostal.png";
+import transport from "../assets/transport.png";
+import sports from "../assets/events.png";
+import laboratory from "../assets/laboratory.png";
 
-export const navBarMenuItems = {
-  personal: {
+
+
+
+
+
+
+
+export const navBarMenuItems = [
+  {
+    id: 0,
+    title: "Personal",
     items: [
-      { key: 1, label: <Link to="marks-history">Marks history</Link> },
-      { key: 2, label: <Link to="transfer-certificate">Request for transfer certificate</Link> },
+      {
+        key: 1,
+        label: "Marks history",
+        image: Mhistory,
+      },
+      { key: 2, label: "Request for transfer certificate", image: certificate },
     ],
   },
-  schedule: {
+  {
+    id: 1,
+    title: "Schedule",
     items: [
-      { key: 1, label: <Link to="academic-calendar">Academic Calendar</Link> },
-      { key: 2, label: <Link to="holidays">Holidays</Link> },
-      { key: 3, label: <Link to="leave-application">Apply for leave</Link> },
+      {
+        key: 1,
+        label: "Academic Calendar",
+        image: calender,
+      },
+      {
+        key: 2,
+        label: "Holidays",
+        image: holidays,
+      },
+      {
+        key: 3,
+        label: "Apply for leave",
+        image: leave,
+      },
     ],
   },
-  function: {
+  {
+    id: 2,
+    title: "Function",
     items: [
-      { key: 1, label: <Link to="syllabus">Syllabus</Link> },
-      { key: 2, label: <Link to="trip">School trips</Link> },
-      { key: 3, label: <Link to="feedback">Feedback</Link> },
+      {
+        key: 1,
+        label: "Syllabus",
+        image: syllabus,
+      },
+      { key: 2, label: "School trips", image: trip },
+      { key: 3, label: "Feedback", image: feedback },
     ],
   },
-  facilities: {
+  {
+    id: 4,
+    title: "Facilities",
     items: [
-      { key: 1, label: <Link to="library">Library</Link> },
-      { key: 2, label: <Link to="hostel">Hostel</Link> },
-      { key: 3, label: <Link to="transport">Transport</Link> },
-      { key: 4, label: <Link to="event">Sports & Events</Link> },
-      { key: 5, label: <Link to="laboratory">Laboratory</Link> },
+      { key: 1, label: "Library", image: library },
+      { key: 2, label: "Hostel", image: hostal },
+      { key: 3, label: "Transport", image: transport },
+      { key: 4, label: "Sports & Events", image: sports },
+      { key: 5, label: "Laboratory", image: laboratory },
     ],
   },
-};
+];
 
 export const headerMenu = {
   items: [

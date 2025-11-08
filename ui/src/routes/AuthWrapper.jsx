@@ -7,5 +7,6 @@ export default function AuthWrapper() {
     <AuthLayout />
   ) : (
     <Navigate to="/dashboard" replace />
+    
   );
 }

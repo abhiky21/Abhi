@@ -8,8 +8,9 @@ export default function ParentLayout() {
       <div className="h-[80px] border-b border-gray-200 bg-white">
         <Header />
       </div>
-
-      <Navbar />
+        <div className="float-left">
+          <Navbar />
+        </div>
 
       <div className="flex-1 [scrollbar-gutter:stable] overflow-auto relative scrollb space-thumb round-thumb">
         <Outlet />
