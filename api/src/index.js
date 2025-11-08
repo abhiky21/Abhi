@@ -30,9 +30,12 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "100mb" }));
 app.use(bodyParser.json({ extended: true, limit: "100mb" }));
 app.set("trust proxy", true);
 
+// API routes should be mounted first
+app.use(process.env.API_ENDPOINT_PREFIX || "/", routes);
+
+// Then static file serving
 app.use(`/assets`, express.static("files/assets/"));
 app.use(`/${process.env.UP_ROUTE}`, express.static(process.env.UP_PATH));
-app.use(process.env.API_ENDPOINT_PREFIX || "/", routes);
 
 function startUI() {
   const uidir = process.env.UI_DIR;
@@ -40,20 +43,22 @@ function startUI() {
 
   const root = process.cwd();
   app.use(express.static(path.resolve(root, uidir)));
-  /*app.get("*", (req, res) => {
-    res.sendFile(path.resolve(root, uidir, "index.html"));
-  });*/
-  app.use((req, res) => {
+
+  // Handle UI routes last, after all API routes
+  app.use((req, res, next) => {
+    // Skip UI handling for /api and /auth paths
+    if (req.path.startsWith("/auth") || req.path.startsWith("/api")) {
+      return next();
+    }
     res.sendFile(path.resolve(root, uidir, "index.html"));
   });
 }
 
 async function startApp() {
   startUI();
-  server = app.listen(process.env.APP_PORT || 8000, () => {
-    const host = server.address().address;
-    const port = server.address().port;
-    console.log(`app listening at https://${host}:${port}`);
+  const port = process.env.APP_PORT || 8000;
+  server = app.listen(port, () => {
+    console.log(`app listening at http://localhost:${port}`);
   });
 }
 
