@@ -1,24 +1,20 @@
 import { Link } from "react-router-dom";
-import Mhistory from "../assets/Icon/marks_history.png";
-import certificate from "../assets/Icon/certificate.png";
-import calender from "../assets/Icon/calender.png";
-import holidays from "../assets/Icon/holidays.png";
-import leave from "../assets/Icon/leave.png";
-import syllabus from "../assets/Icon/syllabus.png";
-import feedback from "../assets/Icon/feedback.png";
-import trip from "../assets/Icon/school_trip.png";
-import library from "../assets/Icon/library.png";
-import hostal from "../assets/Icon/hostal.png";
-import transport from "../assets/Icon/transport.png";
-import sports from "../assets/Icon/events.png";
-import laboratory from "../assets/Icon/laboratory.png";
 
-
-
-
-
-
-
+import {
+  marks_history,
+  certificate,
+  calender,
+  holidays,
+  leave,
+  syllabus,
+  feedback,
+  school_trip,
+  library,
+  hostel,
+  transport,
+  events,
+  laboratory,
+} from "./icon";
 
 export const navBarMenuItems = [
   {
@@ -28,7 +24,7 @@ export const navBarMenuItems = [
       {
         key: 1,
         label: "Marks history",
-        image: Mhistory,
+        image: marks_history,
       },
       { key: 2, label: "Request for transfer certificate", image: certificate },
     ],
@@ -63,7 +59,7 @@ export const navBarMenuItems = [
         label: "Syllabus",
         image: syllabus,
       },
-      { key: 2, label: "School trips", image: trip },
+      { key: 2, label: "School trips", image: school_trip },
       { key: 3, label: "Feedback", image: feedback },
     ],
   },
@@ -72,9 +68,9 @@ export const navBarMenuItems = [
     title: "Facilities",
     items: [
       { key: 1, label: "Library", image: library },
-      { key: 2, label: "Hostel", image: hostal },
+      { key: 2, label: "Hostel", image: hostel },
       { key: 3, label: "Transport", image: transport },
-      { key: 4, label: "Sports & Events", image: sports },
+      { key: 4, label: "Sports & Events", image: events },
       { key: 5, label: "Laboratory", image: laboratory },
     ],
   },

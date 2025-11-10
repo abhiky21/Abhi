@@ -1,15 +1,8 @@
-import { DownOutlined } from "@ant-design/icons";
-import { Button, Dropdown, Space } from "antd";
 import { navBarMenuItems } from "../../assets/menuItems.assets.jsx";
-import { Link } from "react-router-dom";
-import { HistoryOutlined } from "@ant-design/icons";
-
-import { useEffect } from "react";
 
 export default function Navbar() {
-
   return (
-    <div className="float-left ">
+    <div className="float-left">
       <div className="border-r border-gray-300 px-4 py-2 overflow-y-scroll h-[679px] scroll-auto w-40 md:w-full">
         {navBarMenuItems.map((item) => (
           <div key={item.id}>

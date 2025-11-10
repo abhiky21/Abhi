@@ -1,0 +1,16 @@
+export { default as calender } from "./calender.png";
+export { default as certificate } from "./certificate.png";
+export { default as logoText } from "./eduflow.png";
+export { default as events } from "./events.png";
+export { default as feedback } from "./feedback.png";
+export { default as holidays } from "./holidays.png";
+export { default as hostel } from "./hostel.png";
+export { default as laboratory } from "./laboratory.png";
+export { default as leave } from "./leave.png";
+export { default as library } from "./library.png";
+export { default as loginImage } from "./loginImage.jpg";
+export { default as logoImg } from "./logoEduFlow.png";
+export { default as marks_history } from "./marks_history.png";
+export { default as school_trip } from "./school_trip.png";
+export { default as syllabus } from "./syllabus.png";
+export { default as transport } from "./transport.png";
