@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Avatar, Dropdown, Space } from "antd";
 import { DownOutlined, SmileFilled } from "@ant-design/icons";
-import logo from "../../assets/eduflow.png";
+import logo from "../../assets/Icon/eduflow.png";
 import { headerMenu } from "../../assets/menuItems.assets";
 
 export default function Header() {

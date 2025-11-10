@@ -7,14 +7,6 @@ import { HistoryOutlined } from "@ant-design/icons";
 import { useEffect } from "react";
 
 export default function Navbar() {
-  useEffect(() => {
-    const allItems = navBarMenuItems.map((group) => ({
-      group: group.title,
-      items: group.items.map((item) => item),
-    }));
-
-    console.log(allItems);
-  }, []);
 
   return (
     <div className="float-left ">

@@ -8,7 +8,7 @@ export default function ParentLayout() {
       <div className="h-[80px] border-b border-gray-200 bg-white">
         <Header />
       </div>
-        <div className="float-left">
+        <div >
           <Navbar />
         </div>
 

@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import Mhistory from "../assets/marks_history.png";
-import certificate from "../assets/certificate.png";
-import calender from "../assets/calender.png";
-import holidays from "../assets/holidays.png";
-import leave from "../assets/leave.png";
-import syllabus from "../assets/syllabus.png";
-import feedback from "../assets/feedback.png";
-import trip from "../assets/school_trip.png";
-import library from "../assets/library.png";
-import hostal from "../assets/hostal.png";
-import transport from "../assets/transport.png";
-import sports from "../assets/events.png";
-import laboratory from "../assets/laboratory.png";
+import Mhistory from "../assets/Icon/marks_history.png";
+import certificate from "../assets/Icon/certificate.png";
+import calender from "../assets/Icon/calender.png";
+import holidays from "../assets/Icon/holidays.png";
+import leave from "../assets/Icon/leave.png";
+import syllabus from "../assets/Icon/syllabus.png";
+import feedback from "../assets/Icon/feedback.png";
+import trip from "../assets/Icon/school_trip.png";
+import library from "../assets/Icon/library.png";
+import hostal from "../assets/Icon/hostal.png";
+import transport from "../assets/Icon/transport.png";
+import sports from "../assets/Icon/events.png";
+import laboratory from "../assets/Icon/laboratory.png";
 
 
 

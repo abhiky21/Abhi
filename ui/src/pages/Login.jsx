@@ -1,10 +1,10 @@
 import React from "react";
 import { UserOutlined, EyeInvisibleOutlined } from "@ant-design/icons";
 import { Input, Button } from "antd";
-import logo from "../../src/assets/eduflow.png";
-import eduflowlogo from "../../src/assets/LogoEduFlow.png";
-import passwordlock from "../../src/assets/passwordinput.png";
-import loginImage from "../../src/assets/loginImage.jpg";
+import logo from "../../src/assets/Icon/eduflow.png";
+import eduflowlogo from "../../src/assets/Icon/LogoEduFlow.png";
+import passwordlock from "../../src/assets/Icon/passwordinput.png";
+import loginImage from "../../src/assets/Icon/loginImage.jpg";
 import TypingAnimation from "../components/login/TypingAnimation";
 
 function Login() {
