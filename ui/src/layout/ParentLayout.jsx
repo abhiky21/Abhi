@@ -5,12 +5,9 @@ import Navbar from "../components/layout/Navbar";
 export default function ParentLayout() {
   return (
     <div className="h-screen flex flex-col bg-(--page-bg)">
-      <div className="h-[80px] border-b border-gray-200 bg-white">
+      <div className="h-20 border-b border-gray-200 bg-white">
         <Header />
       </div>
-        <div >
-          <Navbar />
-        </div>
 
       <div className="flex-1 [scrollbar-gutter:stable] overflow-auto relative scrollb space-thumb round-thumb">
         <Outlet />

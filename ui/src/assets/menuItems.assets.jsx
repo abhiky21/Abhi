@@ -15,6 +15,13 @@ import {
   events,
   laboratory,
 } from "./icon";
+import {
+  HolderOutlined,
+  HomeOutlined,
+  HomeTwoTone,
+  ScheduleOutlined,
+  ScheduleTwoTone,
+} from "@ant-design/icons";
 
 export const navBarMenuItems = [
   {
@@ -96,3 +103,8 @@ export const headerMenu = {
     },
   ],
 };
+
+export const siderMenuItems = [
+  { key: "dashboard", label: "Dashboard", icon: <HomeOutlined /> },
+  { key: "schedule", label: "Schedule", icon: <ScheduleOutlined /> },
+];
