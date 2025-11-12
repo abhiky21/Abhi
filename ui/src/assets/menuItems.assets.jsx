@@ -86,20 +86,20 @@ export const navBarMenuItems = [
 export const headerMenu = {
   items: [
     {
+      key: 1,
       label: (
         <Link to="/profile" className="text-[10px]" rel="noopener noreferrer">
           Profile <i class="fa-solid fa-user"></i>
         </Link>
       ),
-      key: "0",
     },
     {
+      key: 2,
       label: (
         <Link to="/logout" className="text-[10px]" rel="noopener noreferrer">
           Logout <i className="fa-solid fa-right-from-bracket"></i>
         </Link>
       ),
-      key: "1",
     },
   ],
 };

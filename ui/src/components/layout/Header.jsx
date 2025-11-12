@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Avatar, Dropdown, Space } from "antd";
-import { DownOutlined, SmileFilled } from "@ant-design/icons";
+import { Avatar, Button, Dropdown, Space } from "antd";
+import { DownOutlined, SettingOutlined, SmileFilled } from "@ant-design/icons";
 import logo from "../../assets/Icon/eduflow.png";
 import { headerMenu } from "../../assets/menuItems.assets";
 
@@ -31,11 +31,11 @@ export default function Header() {
           </div>
           <div>
             <Dropdown menu={headerMenu} trigger={["click"]}>
-              <a onClick={(e) => e.preventDefault()}>
-                <Space>
-                  <i className="fa-solid fa-gears fa-xl sm:fa-2xl" style={{ color: "#fcfcfc" }}></i>
-                </Space>
-              </a>
+              <Button
+                type="text"
+                onClick={(e) => e.preventDefault()}
+                icon={<SettingOutlined style={{ fontSize: 22, color: "#fcfcfc" }} />}
+              />
             </Dropdown>
           </div>
         </div>

@@ -43,7 +43,7 @@ export async function user(req) {
       },
       parent: {
         table: "parents",
-        fields: ["class_of_child", "class_name"],
+        fields: ["class_of_child"],
       },
       student: {
         table: "students",

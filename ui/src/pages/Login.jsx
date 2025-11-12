@@ -1,12 +1,29 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Input, Button, Form } from "antd";
-import { logoImg } from "../assets/icon";
-import eduflowlogo from "../assets/Icon/LogoEduFlow.png";
-import loginImage from "../assets/Icon/loginImage.jpg";
-import TypingAnimation from "../components/login/TypingAnimation";
+import { useAuthStore } from "../store/auth.store";
+import { logoImg, logoText, loginImage } from "../assets/icon";
+import TypingAnimation from "../components/page/login/TypingAnimation";
+import * as authService from "../services/auth.service";
 
 function Login() {
+  const navigate = useNavigate();
+  const { setToken, setUser } = useAuthStore((state) => state);
+  const [loading, setLoading] = useState(false);
+
+  const onFinish = async (values) => {
+    const { email, password } = values;
+    setLoading(true);
+    const { success, result } = await authService.login(email, password);
+    setLoading(false);
+    if (success) {
+      setToken(result.token);
+      setUser(result.user);
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center py-10 mx-20 md:mx-40 lg:mx-50 xl:mx-60">
       {/* First Part */}
@@ -27,12 +44,18 @@ function Login() {
           </h1>
           <img
             className="rounded-full w-25 bg-white ml-38 sm:ml-52 p-4 relative bottom-5"
-            src={eduflowlogo}
+            src={logoText}
             alt="EduFlow-logo"
           />
           <h1 className="text-center text-3xl font-semibold ">Login to EduFlow</h1>
           <div className="w-sm sm:w-lg px-10 space-y-4 py-16">
-            <Form name="login" layout="vertical" autoComplete="true">
+            <Form
+              name="login"
+              layout="vertical"
+              onFinish={onFinish}
+              autoComplete="on"
+              initialValues={{ email: "parent@parent.com", password: "123456" }}
+            >
               <Form.Item
                 name="email"
                 rules={[
@@ -62,7 +85,7 @@ function Login() {
               </Form.Item>
 
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large">
+                <Button type="primary" htmlType="submit" block size="large" loading={loading}>
                   Login
                 </Button>
               </Form.Item>
