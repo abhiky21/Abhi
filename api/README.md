@@ -75,22 +75,17 @@ The API will be available at `http://localhost:3000`
 ### Authentication
 
 - `POST /api/auth/login` - User login
-- `POST /api/auth/register` - Register new user
 
 ### Users
 
-- `GET /api/users` - Get all users
-- `GET /api/users/:id` - Get user by ID
-- `PUT /api/users/:id` - Update user
-- `DELETE /api/users/:id` - Delete user
+- `GET /api/user/list/teacher` - Get all teachers
+- `GET /api/user/list/student` - Get all students
 
-### Schools
+- `GET /api/user/list/teacher/:id` - Get teacher by ID
+- `GET /api/user/list/student/:id` - Get student by ID
 
-- `GET /api/schools` - Get all schools
-- `POST /api/schools` - Create new school
-- `GET /api/schools/:id` - Get school by ID
-- `PUT /api/schools/:id` - Update school
-- `DELETE /api/schools/:id` - Delete school
+- `PUT /api/user/save` - Create or update a user
+- `DELETE /api/user/del` - Delete a user
 
 ## Available Scripts
 

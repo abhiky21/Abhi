@@ -3,9 +3,9 @@ import * as userCtrl from "../controllers/user.ctrl.js";
 import * as userMw from "../middlewares/user.mw.js";
 const router = Router({ mergeParams: true });
 
-router.get("/list/teachers", userCtrl.listTeachers);
-router.get("/list/students", userCtrl.listStudents);
+router.get("/list/teacher", userCtrl.listTeachers);
+router.get("/list/student", userCtrl.listStudents);
 router.post("/save", userMw.vldSave, userCtrl.save);
-router.post("del", userCtrl.del);
+router.post("/del", userCtrl.del);
 
-export default Router;
+export default router;

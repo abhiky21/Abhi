@@ -14,7 +14,7 @@ export async function login(email, password) {
 
 export async function user() {
   try {
-    const { data } = axios.get("/auth/user");
+    const { data } = await axios.get("/auth/user");
     return { udtl: data.result, success: true };
   } catch (err) {
     return {

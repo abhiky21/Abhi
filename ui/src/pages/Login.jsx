@@ -85,7 +85,13 @@ function Login() {
               </Form.Item>
 
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large" loading={loading}>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  block
+                  size="large"
+                  loading={loading}
+                >
                   Login
                 </Button>
               </Form.Item>
@@ -103,11 +109,11 @@ function Login() {
       <div className="bg-amber-100 px-10 md:px-20 py-10 rounded-2xl my-10">
         <h1 className="text-2xl pb-2">Lorem, ipsum dolor.</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, maiores natus? Sapiente,
-          inventore. Error, numquam quas! Quisquam reiciendis dicta labore assumenda, nihil, beatae,
-          non adipisci aliquid corrupti eaque dolores quibusdam illo qui fugit odit eum repudiandae
-          consequatur deserunt tempore repellat nesciunt ratione porro veniam! Eligendi rerum quae
-          saepe incidunt quibusdam.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, maiores natus?
+          Sapiente, inventore. Error, numquam quas! Quisquam reiciendis dicta labore
+          assumenda, nihil, beatae, non adipisci aliquid corrupti eaque dolores quibusdam
+          illo qui fugit odit eum repudiandae consequatur deserunt tempore repellat
+          nesciunt ratione porro veniam! Eligendi rerum quae saepe incidunt quibusdam.
         </p>
       </div>
     </div>

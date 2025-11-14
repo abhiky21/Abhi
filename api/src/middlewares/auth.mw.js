@@ -4,8 +4,16 @@ import * as authServ from "../services/auth.service.js";
 
 export async function intialSetup(req, res, next) {
   req.sessionid = req.headers.sessionid;
-  const token = req.headers.authorization;
-  const tokenData = token ? decodeJwtToken(token.replace("Bearer ", "")) : null;
+  // Read Authorization header in a robust, case-insensitive way and
+  // support formats like "Bearer <token>" or just the raw token.
+  const authHeader = req.headers.authorization || (req.get && req.get("authorization"));
+  let token = null;
+  if (authHeader) {
+    // If header is "Bearer <token>", take the second part; otherwise use whole header
+    const parts = authHeader.split(" ").filter(Boolean);
+    token = parts.length === 2 && /^Bearer$/i.test(parts[0]) ? parts[1] : authHeader;
+  }
+  const tokenData = token ? decodeJwtToken(token) : null;
   req.user = null;
 
   if (tokenData) {

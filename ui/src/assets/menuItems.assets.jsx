@@ -16,11 +16,11 @@ import {
   laboratory,
 } from "./icon";
 import {
-  HolderOutlined,
-  HomeOutlined,
+  BankTwoTone,
+  CreditCardTwoTone,
   HomeTwoTone,
-  ScheduleOutlined,
   ScheduleTwoTone,
+  TrophyTwoTone,
 } from "@ant-design/icons";
 
 export const navBarMenuItems = [
@@ -105,6 +105,9 @@ export const headerMenu = {
 };
 
 export const siderMenuItems = [
-  { key: "dashboard", label: "Dashboard", icon: <HomeOutlined /> },
-  { key: "schedule", label: "Schedule", icon: <ScheduleOutlined /> },
+  { key: "dashboard", label: "Dashboard", icon: <HomeTwoTone /> },
+  { key: "schedule", label: "Schedule", icon: <ScheduleTwoTone /> },
+  { key: "function", label: "Function", icon: <TrophyTwoTone /> },
+  { key: "facilities", label: "Facilities", icon: <BankTwoTone /> },
+  { key: "fee", label: "Fee Payment", icon: <CreditCardTwoTone /> },
 ];

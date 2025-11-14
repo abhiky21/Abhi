@@ -11,7 +11,8 @@ export async function login(req, res) {
 
 export async function user(req, res) {
   try {
-    const result = await authServ.user(req);
+    // If `intialSetup` already attached `req.user`, return it directly.
+    const result = req.user ? req.user : await authServ.user(req);
     return res.status(200).json({ result, message: "" });
   } catch (e) {
     return res.status(401).json({ message: e.message || "Error" });
