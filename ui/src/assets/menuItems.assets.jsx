@@ -105,9 +105,9 @@ export const headerMenu = {
 };
 
 export const siderMenuItems = [
-  { key: "dashboard", label: "Dashboard", icon: <HomeTwoTone /> },
-  { key: "schedule", label: "Schedule", icon: <ScheduleTwoTone /> },
-  { key: "function", label: "Function", icon: <TrophyTwoTone /> },
-  { key: "facilities", label: "Facilities", icon: <BankTwoTone /> },
-  { key: "fee", label: "Fee Payment", icon: <CreditCardTwoTone /> },
+  { key: "/dashboard", label: "Dashboard", icon: <HomeTwoTone /> },
+  { key: "/schedule", label: "Schedule", icon: <ScheduleTwoTone /> },
+  { key: "/functions", label: "Functions", icon: <TrophyTwoTone /> },
+  { key: "/facilities", label: "Facilities", icon: <BankTwoTone /> },
+  { key: "/fee-payment", label: "Fee Payment", icon: <CreditCardTwoTone /> },
 ];

@@ -1,14 +1,13 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Spin } from "antd";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { ParentLayout, PrincipalLayout, TeacherLayout } from "../layout/";
 import { useAuthStore } from "../store/auth.store";
 import * as authService from "../services/auth.service";
+import MainLayout from "../layout/MainLayout";
 
 export default function PrivateWrapper() {
   const token = useAuthStore((s) => s.token);
-  const user = useAuthStore((s) => s.user);
   const setUser = useAuthStore((s) => s.setUser);
   const removeToken = useAuthStore((s) => s.removeToken);
   const [isReady, setReady] = useState(false);
@@ -37,14 +36,5 @@ export default function PrivateWrapper() {
     );
   }
 
-  if (!isAuthenticated) return <Navigate to="/" replace />;
-
-  switch (user?.type) {
-    case "principal":
-      return <PrincipalLayout />;
-    case "teacher":
-      return <TeacherLayout />;
-    case "parent":
-      return <ParentLayout />;
-  }
+  return isAuthenticated ? <MainLayout /> : <Navigate to="/" replace />;
 }

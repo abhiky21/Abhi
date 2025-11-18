@@ -1,5 +1,5 @@
 import { ComingSoon } from "../components/common";
 
-export default function Dashboard() {
+export default function FeePayment() {
   return <ComingSoon />;
 }
