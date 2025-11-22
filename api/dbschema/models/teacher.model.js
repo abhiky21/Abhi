@@ -38,8 +38,4 @@ const Teacher = sequelize.define(
   }
 );
 
-// // Associations
-// Teacher.belongsTo(User, { foreignKey: "user_id", as: "user" });
-// User.hasOne(Teacher, { foreignKey: "user_id", as: "teacher" });
-
 export default Teacher;

@@ -30,7 +30,6 @@ const User = sequelize.define(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true,
     },
     password: {
       type: DataTypes.STRING,
@@ -65,9 +64,5 @@ const User = sequelize.define(
     ],
   }
 );
-
-// // Associations
-// User.belongsTo(School, { foreignKey: "school_id", as: "school" });
-// School.hasMany(User, { foreignKey: "school_id", as: "users" });
 
 export default User;

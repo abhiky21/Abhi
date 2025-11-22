@@ -6,7 +6,7 @@ import { useAuthStore } from "../../store/auth.store";
 import { cap1 } from "../../utils/utils";
 import ProfileIcon from "../common/ProfileIcon";
 
-export default function Header() {
+export default function HeaderNav() {
   const { user, removeToken } = useAuthStore((state) => state);
   const navigate = useNavigate();
 

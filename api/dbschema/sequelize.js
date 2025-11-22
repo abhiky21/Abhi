@@ -9,7 +9,7 @@ const dbConfig = {
   HOST: process.env.DB_HOST,
   USER: process.env.DB_USER,
   PASSWORD: process.env.DB_PASS,
-  DB_NAME: process.env.DB_NAME,
+  DB: process.env.DB_NAME,
   dialect: "mysql",
   pool: {
     max: 5,
@@ -19,7 +19,7 @@ const dbConfig = {
   },
 };
 
-const sequelize = new Sequelize(dbConfig.DB_NAME, dbConfig.USER, dbConfig.PASSWORD, {
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   pool: dbConfig.pool,

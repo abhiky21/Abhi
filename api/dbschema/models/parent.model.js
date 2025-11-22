@@ -29,8 +29,4 @@ const Parent = sequelize.define(
   }
 );
 
-// // Associations
-// Parent.belongsTo(User, { foreignKey: "user_id", as: "user" });
-// User.hasOne(Parent, { foreignKey: "user_id", as: "parent" });
-
 export default Parent;

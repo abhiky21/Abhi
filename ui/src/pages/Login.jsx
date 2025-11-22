@@ -25,7 +25,7 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-10 mx-20 md:mx-40 lg:mx-50 xl:mx-60">
+    <div className="flex flex-col items-center justify-center py-10 mx-20 md:mx-40 lg:mx-50 xl:mx-60 h-screen">
       {/* First Part */}
 
       <div className="flex flex-col lg:flex-row items-center justify-center space-x-8">

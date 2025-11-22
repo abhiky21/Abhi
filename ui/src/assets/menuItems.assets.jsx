@@ -111,3 +111,7 @@ export const siderMenuItems = [
   { key: "/facilities", label: "Facilities", icon: <BankTwoTone /> },
   { key: "/fee-payment", label: "Fee Payment", icon: <CreditCardTwoTone /> },
 ];
+
+export const menuItems = {
+  schedule: [{ label: "Academic Calender", image: calender }],
+};

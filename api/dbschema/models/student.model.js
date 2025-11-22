@@ -33,8 +33,4 @@ const Student = sequelize.define(
   }
 );
 
-// // Associations
-// Student.belongsTo(User, { foreignKey: "user_id", as: "user" });
-// User.hasOne(Student, { foreignKey: "user_id", as: "student" });
-
 export default Student;
