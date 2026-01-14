@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
@@ -44,7 +43,9 @@ export default function Login() {
           src={logoText}
           alt="EduFlow-logo"
         />
-        <h1 className="text-center text-3xl font-semibold ">Login to EduFlow</h1>
+        <h1 className="text-center text-3xl font-semibold ">
+          Login to EduFlow
+        </h1>
         <div className="w-sm sm:w-lg px-10 space-y-4 py-16">
           <Form
             name="login"

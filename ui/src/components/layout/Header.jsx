@@ -71,7 +71,7 @@ export default function HeaderNav() {
             getPopupContainer={(triggerNode) => triggerNode.parentElement}
           >
             <div className="flex items-center cursor-pointer select-none">
-              {/* <ProfileIcon name={user?.name} photo_url={user?.photo_url} /> */}
+              <ProfileIcon name={user?.name} photo_url={user?.photo_url} />
             </div>
           </Dropdown>
         </div>

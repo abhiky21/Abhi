@@ -100,7 +100,7 @@ export default async function addInitialData() {
     await addAdminUser(school_id);
     await addTeacherUser(school_id);
     await addParentUser(school_id);
-    await addStudentUser(school_id);
+    // await addStudentUser(school_id);
   } catch (err) {
     console.log("DB Connection Error:", err);
   } finally {

@@ -5,7 +5,7 @@ import { useAuthStore } from "../store/auth.store";
 export default function AuthWrapper() {
   const token = useAuthStore((s) => s.token);
   const isAuthenticated = Boolean(token);
-  return isAuthenticated ? (
+  return !isAuthenticated ? (
     <AuthLayout />
   ) : (
     <Navigate to="/dashboard" replace />

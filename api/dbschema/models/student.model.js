@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../sequelize.js";
-// import User from "./user.model.js";
 
 const Student = sequelize.define(
   "Student",
@@ -12,7 +11,6 @@ const Student = sequelize.define(
     },
     roll_number: {
       type: DataTypes.INTEGER,
-      unique: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -21,6 +19,7 @@ const Student = sequelize.define(
         model: "users",
         key: "id",
       },
+      onDelete: "CASCADE",
     },
     class_name: {
       type: DataTypes.INTEGER,
@@ -30,6 +29,13 @@ const Student = sequelize.define(
   {
     tableName: "students",
     timestamps: false,
+    indexes: [
+      {
+        unique: true,
+        fields: ["roll_number"],
+        name: "roll_number_unique",
+      },
+    ],
   }
 );
 

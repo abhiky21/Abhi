@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../sequelize.js";
-// import User from "./user.model.js";
 
 const Teacher = sequelize.define(
   "Teacher",

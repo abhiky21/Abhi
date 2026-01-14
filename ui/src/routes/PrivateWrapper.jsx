@@ -36,5 +36,5 @@ export default function PrivateWrapper() {
     );
   }
 
-  return !isAuthenticated ? <MainLayout /> : <Navigate to="/" replace />;
+  return isAuthenticated ? <MainLayout /> : <Navigate to="/" replace />;
 }
