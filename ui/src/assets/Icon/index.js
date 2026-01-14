@@ -9,6 +9,7 @@ export { default as laboratory } from "./laboratory.png";
 export { default as leave } from "./leave.png";
 export { default as library } from "./library.png";
 export { default as loginImage } from "./loginImage.jpg";
+export { default as loginImage2 } from "./loginImage_2.png";
 export { default as logoImg } from "./logoEduFlow.png";
 export { default as marks_history } from "./marks_history.png";
 export { default as school_trip } from "./school_trip.png";

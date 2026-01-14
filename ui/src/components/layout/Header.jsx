@@ -1,6 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Dropdown } from "antd";
-import { BellOutlined, LogoutOutlined, SettingTwoTone } from "@ant-design/icons";
+import {
+  BellOutlined,
+  LogoutOutlined,
+  SettingTwoTone,
+} from "@ant-design/icons";
 import logo from "../../assets/Icon/eduflow.png";
 import { useAuthStore } from "../../store/auth.store";
 import { cap1 } from "../../utils/utils";
@@ -34,7 +38,11 @@ export default function HeaderNav() {
         <div className="flex justify-center items-center pl-4">
           <div className="flex items-center justify-center ">
             <Link to="/dashboard">
-              <img className="rounded-full w-50" src={logo} alt="EduFlow-logo" />
+              <img
+                className="rounded-full w-50"
+                src={logo}
+                alt="EduFlow-logo"
+              />
             </Link>
           </div>
           <div className="px-10">
@@ -63,7 +71,7 @@ export default function HeaderNav() {
             getPopupContainer={(triggerNode) => triggerNode.parentElement}
           >
             <div className="flex items-center cursor-pointer select-none">
-              <ProfileIcon name={user?.name} photo_url={user?.photo_url} />
+              {/* <ProfileIcon name={user?.name} photo_url={user?.photo_url} /> */}
             </div>
           </Dropdown>
         </div>
