@@ -2,7 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NotFound from "../pages/NotFound";
 import AuthWrapper from "./AuthWrapper";
 import PrivateWrapper from "./PrivateWrapper";
-import { Dashboard, Facilities, FeePayment, Functions, Login, Schedule } from "../pages";
+import { Dashboard, Facilities, FeePayment, Functions, Login, Schedule,  } from "../pages";
+import SRecords from "../pages/SRecords";
 
 export default function AppRoutes() {
   return (
@@ -21,6 +22,8 @@ export default function AppRoutes() {
           <Route path="functions" element={<Functions />} />
           <Route path="facilities" element={<Facilities />} />
           <Route path="fee-payment" element={<FeePayment />} />
+          <Route path="records" element={<SRecords />} />
+
         </Route>
 
         {/* Catch All */}

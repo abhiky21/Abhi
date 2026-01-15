@@ -11,3 +11,15 @@ export async function listStudent() {
     };
   }
 }
+
+export async function del() {
+  try {
+    const {msg} = await axios.delete("/user/del");
+    return {result: msg.result, success: true}
+  } catch (err) {
+    return {
+      success: false,
+      message: err?.message || "Error",
+    }
+  }
+}

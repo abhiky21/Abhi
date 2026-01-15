@@ -81,6 +81,17 @@ export const navBarMenuItems = [
       { key: 5, label: "Laboratory", image: laboratory },
     ],
   },
+  {
+  id: 5,
+    title: "Records",
+    items: [
+      { key: 1, label: "Library", image: library },
+      { key: 2, label: "Hostel", image: hostel },
+      { key: 3, label: "Transport", image: transport },
+      { key: 4, label: "Sports & Events", image: events },
+      { key: 5, label: "Laboratory", image: laboratory },
+    ],
+  },
 ];
 
 export const headerMenu = {
@@ -110,6 +121,8 @@ export const siderMenuItems = [
   { key: "/functions", label: "Functions", icon: <TrophyTwoTone /> },
   { key: "/facilities", label: "Facilities", icon: <BankTwoTone /> },
   { key: "/fee-payment", label: "Fee Payment", icon: <CreditCardTwoTone /> },
+  { key: "/records", label: "Records", icon: <CreditCardTwoTone /> },
+
 ];
 
 export const menuItems = {

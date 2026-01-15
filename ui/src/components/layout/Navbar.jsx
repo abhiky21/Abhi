@@ -13,6 +13,7 @@ export default function Navbar() {
                   <button className="flex items-center flex-col hover:bg-sky-100 px-4 py-2 rounded cursor-pointer">
                     <img src={it.image} className="w-12" alt="" />
                     <p>{it.label}</p>
+                    
                   </button>
                 </div>
               ))}
