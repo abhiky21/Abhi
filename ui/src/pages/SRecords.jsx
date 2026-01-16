@@ -33,10 +33,10 @@ export default function SRecords() {
   ];
 
   const del = async (id) => {
-    setLoading(true)
+    // setLoading(true)
     const {success} = await usrServ.del(id)
     if(success) {
-      setLoading(false)
+      // setLoading(false)
       console.log(success);
       
     }

@@ -6,6 +6,6 @@ const router = Router({ mergeParams: true });
 router.get("/list/teacher", userCtrl.listTeachers);
 router.get("/list/student", userCtrl.listStudents);
 router.post("/save", userMw.vldSave, userCtrl.save);
-router.post("/del", userCtrl.del);
+router.delete("/del", userCtrl.del);
 
 export default router;
